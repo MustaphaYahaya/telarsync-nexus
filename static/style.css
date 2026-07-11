@@ -1,0 +1,138 @@
+:root {
+  --primary-color: #0D1B2A;
+  --secondary-color: #f4f4f4;
+  --text-color: #333;
+  --slate-gray-light: #d1d5db;
+  --slate-gray-medium: #6b7280;
+  --slate-gray-dark: #374151;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+  transition: all 0.3s ease-in-out;
+}
+
+.view {
+  display: none;
+}
+
+.view.active {
+  display: block;
+}
+
+/* Desktop Styles (Sidebar) */
+.sidebar {
+  width: 250px;
+  background-color: var(--primary-color);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  transition: width 0.3s ease-in-out;
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    padding: 0 20px 20px 20px;
+}
+
+.sidebar-header img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.sidebar-header h1 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar nav a {
+  display: block;
+  padding: 15px 20px;
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  border-left: 3px solid transparent;
+}
+
+.sidebar nav a.active,
+.sidebar nav a:hover {
+  background-color: #A3704C;
+  border-left-color: #E6B800;
+}
+
+.bottom-nav {
+  display: none;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+    padding-bottom: 60px; /* Space for bottom nav */
+  }
+
+  .sidebar {
+    display: none;
+  }
+  
+  .main-content {
+     padding-bottom: 80px;
+  }
+
+  .bottom-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background-color: var(--primary-color);
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+  }
+
+  .bottom-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.8rem;
+    text-align: center;
+    padding: 10px;
+    flex-grow: 1;
+  }
+  
+  .bottom-nav a.active {
+      background-color: #A3704C;
+  }
+}
+
+/* View specific styles */
+h2 {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--slate-gray-light);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}

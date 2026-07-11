@@ -1,0 +1,15 @@
+{
+  "short_name": "SartorGrid",
+  "name": "SartorGrid - by SavannahNode",
+  "icons": [
+    {
+      "src": "https://storage.googleapis.com/dala-prod-public-storage/generated-images/4c1a90be-789a-4895-9ab4-da22cb7d0b98/telarsync-logo-39d9f5b8-1783646069709.webp",
+      "type": "image/webp",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#0D1B2A",
+  "background_color": "#ffffff"
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SartorGrid</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#0D1B2A"/>
+</head>
+<body>
+
+    <!-- Sidebar for Desktop -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div style="width:40px;height:40px;background:#A3704C;border-radius:8px;display:flex;align-items:center;justify-content:center;margin-right:10px;font-size:20px;font-weight:bold;color:#E6B800;">SG</div>
+            <h1>SartorGrid</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#dashboard">Dashboard Overview</a></li>
+                <li><a href="#measurements">Measurement Vault</a></li>
+                <li><a href="#orders">Order Tracker</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <section id="dashboard" class="view">
+            <h2>Dashboard Overview</h2>
+            <p>Welcome to your SartorGrid dashboard. Here you'll find a summary of your recent activity.</p>
+        </section>
+
+        <section id="measurements" class="view">
+            <h2>Measurement Vault</h2>
+            <p>All your saved measurements are stored here, securely and accessibly.</p>
+        </section>
+
+        <section id="orders" class="view">
+            <h2>Order Tracker</h2>
+            <p>Track the status of your ongoing and completed orders.</p>
+        </section>
+    </main>
+
+    <!-- Bottom Navigation for Mobile -->
+    <nav class="bottom-nav">
+        <a href="#dashboard">Dashboard</a>
+        <a href="#measurements">Vault</a>
+        <a href="#orders">Orders</a>
+    </nav>
+    
+    <script src="/static/script.js"></script>
+</body>
+</html>

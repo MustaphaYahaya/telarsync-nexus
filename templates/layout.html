@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}SartorGrid{% endblock %} - SavannahNode</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><a href="{{ url_for('index', enterprise_id=active_enterprise_id) }}" style="color: #E6B800;">SartorGrid</a></h1>
+            {% if enterprises %}
+            <div class="enterprise-switcher">
+                <label for="enterprise-select">Active Workshop:</label>
+                <select id="enterprise-select">
+                    {% for enterprise in enterprises %}
+                        <option value="{{ enterprise.id }}" {% if enterprise.id|string == active_enterprise_id %}selected{% endif %}>
+                            {{ enterprise.business_name }}
+                        </option>
+                    {% endfor %}
+                </select>
+            </div>
+            {% endif %}
+        </div>
+    </header>
+    <nav>
+        <div class="container">
+             {% if active_enterprise_id %}
+            <a href="{{ url_for('index', enterprise_id=active_enterprise_id) }}">Dashboard</a>
+            <a href="{{ url_for('measurements.measurements_page', enterprise_id=active_enterprise_id) }}">Measurements</a>
+            <a href="{{ url_for('tracker.tracker_page', enterprise_id=active_enterprise_id) }}">Tracker</a>
+            {% else %}
+            <p>Please wait, loading enterprises...</p>
+            {% endif %}
+        </div>
+    </nav>
+    <main>
+        <div class="container">
+            {% block content %}{% endblock %}
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 SavannahNode. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        const API_BASE_URL = '{{ request.url_root }}';
+        const ACTIVE_ENTERPRISE_ID = '{{ active_enterprise_id }}';
+    </script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>
